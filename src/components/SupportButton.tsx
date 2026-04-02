@@ -6,6 +6,8 @@ import { loadGurshaScript } from "../loader";
 export interface BaseSupportProps {
   /** The GurshaPlus username (e.g., 'daniel') */
   creator: string;
+  /** The interaction style */
+  variant: "popup" | "floating";
   /** Custom label for the button and modal header */
   label?: string;
   /** Custom emoji for the button and modal */
@@ -21,14 +23,12 @@ export interface BaseSupportProps {
 export type SupportButtonProps = BaseSupportProps &
   (
     | {
-        /** The interaction style */
         variant: "floating";
         /** Custom position for the widget (left|right) */
         position?: "left" | "right";
       }
     | {
-        /** The interaction style */
-        variant?: "popup";
+        variant: "popup";
         /** 
          * @deprecated Position is only supported in 'floating' mode.
          * Please remove it or change variant to 'floating'.
@@ -47,7 +47,7 @@ export function SupportButton(props: SupportButtonProps) {
     label = "Give a Gursha",
     emoji = "🤌",
     position = "right",
-    variant = "popup",
+    variant,
     className = "",
     style,
     children,

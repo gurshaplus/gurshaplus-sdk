@@ -30,8 +30,8 @@ export default function MyPage() {
   return (
     <SupportButton 
       creator="daniel" 
+      variant="popup" // Required: 'popup' or 'floating'
       label="Support Me" 
-      variant="popup"
     />
   );
 }
@@ -42,7 +42,7 @@ export default function MyPage() {
 | Prop | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `creator` | `string` | **Required** | The GurshaPlus username. |
-| `variant` | `"popup" \| "floating"` | `popup` for button, `floating` for provider | How the widget interacts. |
+| `variant` | `"popup" \| "floating"` | **Required** | How the widget interacts. |
 | `label` | `string` | `"Give a Gursha"` | The label for the button and modal. |
 | `emoji` | `string` | `"🤌"` | The emoji displayed in the widget. |
 | `position` | `"left" \| "right"` | `"right"` | Widget screen position. |

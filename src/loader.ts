@@ -2,7 +2,10 @@
  * GurshaPlus Script Loader Utility
  */
 
-const GURSHA_SCRIPT_URL = "https://localhost:3000/widget/widget.js";
+const GURSHA_SCRIPT_URL =
+  process.env.NODE_ENV === "development"
+    ? "https://staging.gurshaplus.com/widget/widget.js"
+    : "https://gurshaplus.com/widget/widget.js";
 
 declare global {
   interface Window {
@@ -21,6 +24,9 @@ declare global {
 let scriptPromise: Promise<void> | null = null;
 
 export const loadGurshaScript = (): Promise<void> => {
+  if (!GURSHA_SCRIPT_URL) {
+    throw new Error("GURSHA_SCRIPT_URL is not defined");
+  }
   if (typeof window === "undefined") return Promise.resolve();
 
   if (scriptPromise) return scriptPromise;

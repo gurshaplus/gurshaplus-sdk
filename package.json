@@ -1,7 +1,7 @@
 {
   "name": "@gurshaplus/sdk",
   "version": "1.0.0",
-  "description": "Premium tipping SDK for GurshaPlus. Easily embed donation widgets into React and Next.js apps.",
+  "description": "The official SDK for GurshaPlus. Easily integrate supporting and donations into your React, Next.js, or Vanilla JS applications.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

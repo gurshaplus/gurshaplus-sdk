@@ -29,7 +29,7 @@ export type SupportButtonProps = BaseSupportProps &
       }
     | {
         variant: "popup";
-        /** 
+        /**
          * @deprecated Position is only supported in 'floating' mode.
          * Please remove it or change variant to 'floating'.
          */
@@ -51,7 +51,7 @@ export function SupportButton(props: SupportButtonProps) {
     className = "",
     style,
     children,
-  } = props as any;
+  } = props;
 
   const [, setIsReady] = useState(false);
 
@@ -125,4 +125,4 @@ export function SupportButton(props: SupportButtonProps) {
       )}
     </button>
   );
-};
+}

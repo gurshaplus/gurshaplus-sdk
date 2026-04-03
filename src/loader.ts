@@ -2,7 +2,7 @@
  * GurshaPlus Script Loader Utility
  */
 
-const GURSHA_SCRIPT_URL = "https://staging.gurshaplus.com/widget/widget.js";
+const GURSHA_SCRIPT_URL = "https://staging.gurshaplus.com/widget/widget.min.js";
 
 declare global {
   interface Window {

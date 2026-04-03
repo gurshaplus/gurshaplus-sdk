@@ -2,10 +2,7 @@
  * GurshaPlus Script Loader Utility
  */
 
-const GURSHA_SCRIPT_URL =
-  process.env.NODE_ENV === "development"
-    ? "https://staging.gurshaplus.com/widget/widget.js"
-    : "https://gurshaplus.com/widget/widget.js";
+const GURSHA_SCRIPT_URL = "https://staging.gurshaplus.com/widget/widget.js";
 
 declare global {
   interface Window {

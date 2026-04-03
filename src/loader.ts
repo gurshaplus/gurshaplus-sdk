@@ -2,7 +2,10 @@
  * GurshaPlus Script Loader Utility
  */
 
-const GURSHA_SCRIPT_URL = "https://staging.gurshaplus.com/widget/widget.min.js";
+const GURSHA_SCRIPT_URL =
+  window.location.hostname === "staging.gurshaplus.com"
+    ? "https://staging.gurshaplus.com/widget/widget.min.js"
+    : "https://gurshaplus.com/widget/widget.min.js";
 
 declare global {
   interface Window {

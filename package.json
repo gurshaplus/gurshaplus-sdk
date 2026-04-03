@@ -1,6 +1,6 @@
 {
   "name": "@gurshaplus/sdk",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "The official SDK for GurshaPlus. Easily integrate supporting and donations into your React, Next.js, or Vanilla JS applications.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

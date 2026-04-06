@@ -57,7 +57,7 @@ export function SupportButton(props: SupportButtonProps) {
 
   useEffect(() => {
     // Pre-load script for snappier response
-    loadGurshaScript()
+    loadGurshaScript({ creator, label, emoji, position, variant })
       .then(async () => {
         setIsReady(true);
         if (variant === "floating" && window.GurshaPlus) {
@@ -75,7 +75,7 @@ export function SupportButton(props: SupportButtonProps) {
 
   const handleClick = async () => {
     try {
-      await loadGurshaScript();
+      await loadGurshaScript({ creator, label, emoji, position, variant });
 
       if (window.GurshaPlus) {
         await window.GurshaPlus.support({

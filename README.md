@@ -29,7 +29,7 @@ import { SupportButton } from "@gurshaplus/sdk";
 export default function MyPage() {
   return (
     <SupportButton 
-      creator="daniel" 
+      creator="gurshaplus" 
       variant="popup" // Required: 'popup' or 'floating'
       label="Support Me" 
     />
@@ -62,7 +62,7 @@ async function handleSupport() {
   await loadGurshaScript();
   
   window.GurshaPlus.support({
-    creator: "daniel",
+    creator: "gurshaplus",
     label: "Give a Gursha",
     emoji: "🎨"
   });
@@ -74,6 +74,16 @@ async function handleSupport() {
 - Payments are handled securely via GurshaPlus providers.
 - No sensitive user data is stored by the SDK.
 - Support for private messages and visibility is built-in.
+
+## 📝 Changelog
+
+### v1.0.9
+- **Iframe Bridge Architecture**: SDK now natively bypasses third-party CORS restrictions by running the widget via a deeply integrated iframe.
+- **Improved SSR Compatibility**: Resolved a `window is not defined` crash in Next.js when rendering as a Server Component.
+- **Fluid Layout**: Resolved widget layout truncation by delegating overlay animations cleanly within the iframe context.
+
+### v1.0.8
+- Initial release featuring strict `variant` checks and robust payload handling.
 
 ## 📄 License
 

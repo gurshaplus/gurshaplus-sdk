@@ -48,6 +48,8 @@ export default function MyPage() {
 | `position` | `"left" \| "right"` | `"right"` | Widget screen position. |
 | `className` | `string` | `""` | Additional CSS classes for the button. |
 | `style` | `object` | `{}` | Inline styles for the button. |
+| `onSuccess` | `(data: { status: string, donationId: string, donation: object }) => void` | `undefined` | Called when a donation completes successfully. |
+| `onFailed` | `(data: { status: string, message: string }) => void` | `undefined` | Called when a donation fails or errors. |
 
 ---
 
@@ -76,6 +78,16 @@ async function handleSupport() {
 - Support for private messages and visibility is built-in.
 
 ## 📝 Changelog
+
+### v1.1.0
+- **Callback Support**: `GurshaPlus.support()` now accepts `onSuccess` and `onFailed` callback options. These fire when a donation completes or fails, receiving a payload with donation details.
+  - `onSuccess({ status, donationId, donation })` — called on successful payment confirmation.
+  - `onFailed({ status, message })` — called when payment fails or errors.
+- **PostMessage Events**: The widget now emits structured `postMessage` events to parent frames for iframe/embed integrations:
+  - `gursha-ready` — widget is initialized and rendered.
+  - `gursha-open` / `gursha-close` — modal open/close state changes.
+  - `gursha-success` — payment succeeded, includes `donationId` and `donation` data.
+  - `gursha-failed` — payment failed, includes error `message`.
 
 ### v1.0.9
 - **Iframe Bridge Architecture**: SDK now natively bypasses third-party CORS restrictions by running the widget via a deeply integrated iframe.
